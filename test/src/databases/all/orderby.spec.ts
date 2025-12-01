@@ -25,7 +25,7 @@
 import {RuntimeList, allDatabases} from '../../runtimes';
 import {databasesFromEnvironmentOr} from '../../util';
 import '../../util/db-jest-matchers';
-import {Dialect} from '@malloydata/malloy';
+import {Dialect} from '@ajuhos/malloy';
 
 const runtimes = new RuntimeList(databasesFromEnvironmentOr(allDatabases));
 

@@ -25,11 +25,11 @@ import type {
   FetchSchemaOptions,
   MalloyError,
   SQLSourceDef,
-} from '@malloydata/malloy';
-import {DuckDBDialect, registerDialect} from '@malloydata/malloy';
+} from '@ajuhos/malloy';
+import {DuckDBDialect, registerDialect} from '@ajuhos/malloy';
 import {testRuntimeFor} from '../runtimes';
 import '../util/db-jest-matchers';
-import {DuckDBConnection} from '@malloydata/db-duckdb';
+import {DuckDBConnection} from '@ajuhos/db-duckdb';
 
 const envDatabases = (
   process.env['MALLOY_DATABASES'] ||

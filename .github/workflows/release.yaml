@@ -43,7 +43,7 @@ jobs:
       - name: npm install, build, and publish
         run: |
           # Configure git user
-          git config --global user.email "malloy-ci-bot@malloydata.org"
+          git config --global user.email "malloy-ci-bot@ajuhos.org"
           git config --global user.name "Malloy CI Bot"
           # Build
           npm --no-audit --no-fund ci --loglevel error

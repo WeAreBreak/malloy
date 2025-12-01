@@ -8,7 +8,7 @@
 // @ts-ignore
 import {runtimeFor} from '../../../test/src/runtimes';
 import {getDataTree} from './data_tree';
-import {API} from '@malloydata/malloy';
+import {API} from '@ajuhos/malloy';
 
 const duckdb = runtimeFor('duckdb');
 

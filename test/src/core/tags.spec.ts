@@ -21,9 +21,9 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import {annotationToTag} from '@malloydata/malloy';
-import type {TagDict} from '@malloydata/malloy-tag';
-import {Tag} from '@malloydata/malloy-tag';
+import {annotationToTag} from '@ajuhos/malloy';
+import type {TagDict} from '@ajuhos/malloy-tag';
+import {Tag} from '@ajuhos/malloy-tag';
 import {runtimeFor} from '../runtimes';
 
 declare global {

@@ -12,9 +12,9 @@ import type {
   Expr,
   TypecastExpr,
   FieldDef,
-} from '@malloydata/malloy';
+} from '@ajuhos/malloy';
 
-import {constantExprToSQL, mkFieldDef} from '@malloydata/malloy';
+import {constantExprToSQL, mkFieldDef} from '@ajuhos/malloy';
 
 interface TypedValue {
   expr: Expr;

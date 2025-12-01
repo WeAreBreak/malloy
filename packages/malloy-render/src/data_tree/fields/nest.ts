@@ -1,4 +1,4 @@
-import type {Tag} from '@malloydata/malloy-tag';
+import type {Tag} from '@ajuhos/malloy-tag';
 import {FieldBase} from './base';
 import {Field} from '.';
 import type {

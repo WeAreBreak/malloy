@@ -21,10 +21,10 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import {describeIfDatabaseAvailable} from '@malloydata/malloy/test';
+import {describeIfDatabaseAvailable} from '@ajuhos/malloy/test';
 import {DuckDBCommon} from './duckdb_common';
 import {DuckDBWASMConnection} from './duckdb_wasm_connection_node';
-import type {SQLSourceDef} from '@malloydata/malloy';
+import type {SQLSourceDef} from '@ajuhos/malloy';
 
 const [describe] = describeIfDatabaseAvailable(['duckdb_wasm']);
 

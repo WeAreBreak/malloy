@@ -30,8 +30,8 @@ import type {
   QueryDataRow,
   QueryOptionsReader,
   RunSQLOptions,
-} from '@malloydata/malloy';
-import packageJson from '@malloydata/malloy/package.json';
+} from '@ajuhos/malloy';
+import packageJson from '@ajuhos/malloy/package.json';
 
 export interface DuckDBConnectionOptions extends ConnectionConfig {
   additionalExtensions?: string[];

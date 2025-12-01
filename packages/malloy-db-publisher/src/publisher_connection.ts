@@ -17,8 +17,8 @@ import type {
   TableSourceDef,
   RunSQLOptions,
   TestableConnection,
-} from '@malloydata/malloy';
-import {BaseConnection} from '@malloydata/malloy/connection';
+} from '@ajuhos/malloy';
+import {BaseConnection} from '@ajuhos/malloy/connection';
 import type {
   Connection,
   ConnectionAttributes,

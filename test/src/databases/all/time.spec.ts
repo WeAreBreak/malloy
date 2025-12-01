@@ -31,7 +31,7 @@ import {
   runQuery,
 } from '../../util';
 import {DateTime as LuxonDateTime} from 'luxon';
-import {API} from '@malloydata/malloy';
+import {API} from '@ajuhos/malloy';
 import {TestSelect} from '../../test-select';
 
 const runtimes = new RuntimeList(databasesFromEnvironmentOr(allDatabases));

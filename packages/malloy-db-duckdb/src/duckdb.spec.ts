@@ -23,9 +23,9 @@
 
 import {DuckDBCommon} from './duckdb_common';
 import {DuckDBConnection} from './duckdb_connection';
-import type {SQLSourceRequest, StructDef} from '@malloydata/malloy';
-import {mkArrayDef} from '@malloydata/malloy';
-import {describeIfDatabaseAvailable} from '@malloydata/malloy/test';
+import type {SQLSourceRequest, StructDef} from '@ajuhos/malloy';
+import {mkArrayDef} from '@ajuhos/malloy';
+import {describeIfDatabaseAvailable} from '@ajuhos/malloy/test';
 
 const [describe] = describeIfDatabaseAvailable(['duckdb']);
 

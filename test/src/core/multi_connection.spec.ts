@@ -24,8 +24,8 @@
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
-import * as malloy from '@malloydata/malloy';
-import {EmptyURLReader} from '@malloydata/malloy';
+import * as malloy from '@ajuhos/malloy';
+import {EmptyURLReader} from '@ajuhos/malloy';
 import {DuckDBTestConnection, PostgresTestConnection} from '../runtimes';
 import {describeIfDatabaseAvailable} from '../util';
 

@@ -1,4 +1,4 @@
-import {DuckDBWASMConnection} from '@malloydata/db-duckdb/wasm';
+import {DuckDBWASMConnection} from '@ajuhos/db-duckdb/wasm';
 import {Preview} from '@storybook/html';
 import registeredData from './registered_data.json';
 import theme from './theme';

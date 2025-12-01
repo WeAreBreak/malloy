@@ -1,5 +1,5 @@
 {
-  "name": "@malloydata/malloy-filter",
+  "name": "@ajuhos/malloy-filter",
   "version": "0.0.325",
   "license": "MIT",
   "description": "Parsers for the Malloy filtering sub-languages",

@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import type * as Malloy from '@malloydata/malloy-interfaces';
+import type * as Malloy from '@ajuhos/malloy-interfaces';
 
 export class Timer {
   readonly startTime: number;

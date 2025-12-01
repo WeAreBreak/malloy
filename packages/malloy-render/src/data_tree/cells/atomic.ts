@@ -1,4 +1,4 @@
-import type * as Malloy from '@malloydata/malloy-interfaces';
+import type * as Malloy from '@ajuhos/malloy-interfaces';
 import type {
   BooleanField,
   DateField,

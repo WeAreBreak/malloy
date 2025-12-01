@@ -42,7 +42,7 @@ import {
   DuckDBTimestampSeconds,
   MDConnection,
 } from '@motherduck/wasm-client';
-import type {QueryDataRow, QueryValue} from '@malloydata/malloy';
+import type {QueryDataRow, QueryValue} from '@ajuhos/malloy';
 
 function unwrapMotherDuck(value: DuckDBValue) {
   let result: QueryValue = null;

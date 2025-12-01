@@ -19,9 +19,9 @@ import type {
   SQLSourceDef,
   TableSourceDef,
   SQLSourceRequest,
-} from '@malloydata/malloy';
-import {MySQLDialect, sqlKey} from '@malloydata/malloy';
-import {BaseConnection} from '@malloydata/malloy/connection';
+} from '@ajuhos/malloy';
+import {MySQLDialect, sqlKey} from '@ajuhos/malloy';
+import {BaseConnection} from '@ajuhos/malloy/connection';
 import {randomUUID, createHash} from 'crypto';
 import * as MYSQL from 'mysql2/promise';
 

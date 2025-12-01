@@ -1,5 +1,5 @@
 {
-  "name": "@malloydata/db-publisher",
+  "name": "@ajuhos/db-publisher",
   "version": "0.0.325",
   "license": "MIT",
   "main": "dist/index.js",
@@ -23,7 +23,7 @@
     "generate-api-types": "openapi-generator-cli generate -i publisher-api-doc.yaml -g typescript-axios -o src/client/ && node scripts/patch-common.js"
   },
   "dependencies": {
-    "@malloydata/malloy": "0.0.325",
+    "@ajuhos/malloy": "0.0.325",
     "axios": "^1.6.7"
   },
   "devDependencies": {

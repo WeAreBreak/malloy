@@ -4,8 +4,8 @@ import {
   shouldRenderAs,
   extractExpressionFromTag,
 } from '../utils';
-import * as Malloy from '@malloydata/malloy-interfaces';
-import type {Tag} from '@malloydata/malloy-tag';
+import * as Malloy from '@ajuhos/malloy-interfaces';
+import type {Tag} from '@ajuhos/malloy-tag';
 import {renderTagFromAnnotations, NULL_SYMBOL, notUndefined} from '../../util';
 import type {
   Field,

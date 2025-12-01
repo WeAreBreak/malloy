@@ -21,8 +21,8 @@
  */
 
 import {PooledPostgresConnection} from './postgres_connection';
-import type {SQLSourceDef} from '@malloydata/malloy';
-import {describeIfDatabaseAvailable} from '@malloydata/malloy/test';
+import type {SQLSourceDef} from '@ajuhos/malloy';
+import {describeIfDatabaseAvailable} from '@ajuhos/malloy/test';
 
 const [describe] = describeIfDatabaseAvailable(['postgres']);
 

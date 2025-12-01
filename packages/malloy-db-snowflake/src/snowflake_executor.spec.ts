@@ -22,8 +22,8 @@
  */
 
 import {SnowflakeExecutor} from './snowflake_executor';
-import type {QueryData, RunSQLOptions} from '@malloydata/malloy';
-import {describeIfDatabaseAvailable} from '@malloydata/malloy/test';
+import type {QueryData, RunSQLOptions} from '@ajuhos/malloy';
+import {describeIfDatabaseAvailable} from '@ajuhos/malloy/test';
 
 const [describe] = describeIfDatabaseAvailable(['snowflake']);
 

@@ -15,7 +15,7 @@ export default defineConfig({
     }),
   ],
   optimizeDeps: {
-    include: ['@malloydata/malloy'],
+    include: ['@ajuhos/malloy'],
   },
   resolve: {
     alias: {

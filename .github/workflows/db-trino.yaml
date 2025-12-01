@@ -33,7 +33,7 @@ jobs:
           TRINO_CATALOG: bigquery
           TRINO_SCHEMA: malloytest
           TRINO_SERVER: http://localhost:8080
-          TRINO_USER: malloy-ci-bot@malloydata.org
+          TRINO_USER: malloy-ci-bot@ajuhos.org
       # - name: Show docker logs
       #   if: always()
       #   run: |

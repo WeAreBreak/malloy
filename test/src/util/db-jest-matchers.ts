@@ -22,8 +22,8 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import type {Result, Runtime} from '@malloydata/malloy';
-import {SingleConnectionRuntime} from '@malloydata/malloy';
+import type {Result, Runtime} from '@ajuhos/malloy';
+import {SingleConnectionRuntime} from '@ajuhos/malloy';
 import EventEmitter from 'events';
 import {inspect} from 'util';
 import type {

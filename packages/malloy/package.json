@@ -1,5 +1,5 @@
 {
-  "name": "@malloydata/malloy",
+  "name": "@ajuhos/malloy",
   "version": "0.0.325",
   "license": "MIT",
   "exports": {
@@ -41,21 +41,21 @@
     "generate-version-file": "VERSION=$(npm pkg get version --workspaces=false | tr -d \\\")\necho \"// generated with 'generate-version-file' script; do not edit manually\\nexport const MALLOY_VERSION = '$VERSION';\" > src/version.ts"
   },
   "dependencies": {
-    "@malloydata/malloy-filter": "0.0.325",
-    "@malloydata/malloy-interfaces": "0.0.325",
-    "@malloydata/malloy-tag": "0.0.325",
-    "antlr4ts": "^0.5.0-alpha.4",
+    "@ajuhos/malloy-filter": "0.0.325",
+    "@ajuhos/malloy-interfaces": "0.0.325",
+    "@ajuhos/malloy-tag": "0.0.325",
+    "antlr4ts": "0.5.0-alpha.4",
     "assert": "^2.0.0",
     "jaro-winkler": "^0.2.8",
     "jest-diff": "^29.6.2",
     "lodash": "^4.17.20",
     "luxon": "^3.5.0",
-    "uuid": "^8.3.2"
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@types/jaro-winkler": "^0.2.3",
     "@types/lodash": "^4.14.165",
     "@types/luxon": "^3.5.0",
-    "antlr4ts-cli": "^0.5.0-alpha.4"
+    "antlr4ts-cli": "0.5.0-alpha.4"
   }
 }
