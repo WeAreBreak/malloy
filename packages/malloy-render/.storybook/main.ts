@@ -50,8 +50,8 @@ const config: StorybookConfig = {
       resolve: {
         preserveSymlinks: true,
         alias: {
-          '@malloydata/malloy': join(__dirname, '../../malloy/src'),
-          '@malloydata/db-duckdb/wasm': join(
+          '@ajuhos/malloy': join(__dirname, '../../malloy/src'),
+          '@ajuhos/db-duckdb/wasm': join(
             __dirname,
             '../../malloy-db-duckdb/src/duckdb_wasm_connection_browser'
           ),

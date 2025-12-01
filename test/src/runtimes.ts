@@ -28,25 +28,25 @@ import type {
   Result,
   RunSQLOptions,
   ModelCache,
-} from '@malloydata/malloy';
+} from '@ajuhos/malloy';
 import {
   SingleConnectionRuntime,
   InMemoryURLReader,
   InMemoryModelCache,
   CacheManager,
-} from '@malloydata/malloy';
-import {BigQueryConnection} from '@malloydata/db-bigquery';
-import {DuckDBConnection} from '@malloydata/db-duckdb';
-import {DuckDBWASMConnection} from '@malloydata/db-duckdb/wasm';
-import {SnowflakeConnection} from '@malloydata/db-snowflake';
-import {PooledPostgresConnection} from '@malloydata/db-postgres';
-import {TrinoConnection, TrinoExecutor} from '@malloydata/db-trino';
-import {SnowflakeExecutor} from '@malloydata/db-snowflake/src/snowflake_executor';
-import {PrestoConnection} from '@malloydata/db-trino/src/trino_connection';
+} from '@ajuhos/malloy';
+import {BigQueryConnection} from '@ajuhos/db-bigquery';
+import {DuckDBConnection} from '@ajuhos/db-duckdb';
+import {DuckDBWASMConnection} from '@ajuhos/db-duckdb/wasm';
+import {SnowflakeConnection} from '@ajuhos/db-snowflake';
+import {PooledPostgresConnection} from '@ajuhos/db-postgres';
+import {TrinoConnection, TrinoExecutor} from '@ajuhos/db-trino';
+import {SnowflakeExecutor} from '@ajuhos/db-snowflake/src/snowflake_executor';
+import {PrestoConnection} from '@ajuhos/db-trino/src/trino_connection';
 import {
   MySQLConnection,
   MySQLExecutor,
-} from '@malloydata/db-mysql/src/mysql_connection';
+} from '@ajuhos/db-mysql/src/mysql_connection';
 import {EventEmitter} from 'events';
 
 export class SnowflakeTestConnection extends SnowflakeConnection {

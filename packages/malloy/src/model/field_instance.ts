@@ -31,7 +31,7 @@ import {
   QueryFieldStruct,
   type QueryField,
 } from './query_node';
-import type * as Malloy from '@malloydata/malloy-interfaces';
+import type * as Malloy from '@ajuhos/malloy-interfaces';
 
 type InstanceFieldUsage =
   | {

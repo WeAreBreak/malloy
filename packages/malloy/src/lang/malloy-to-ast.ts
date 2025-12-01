@@ -61,10 +61,10 @@ import {
   isMatrixOperation,
   isParameterType,
 } from '../model/malloy_types';
-import {Tag} from '@malloydata/malloy-tag';
+import {Tag} from '@ajuhos/malloy-tag';
 import {isNotUndefined, rangeFromContext} from './utils';
-import {isFilterable} from '@malloydata/malloy-filter';
-import type * as Malloy from '@malloydata/malloy-interfaces';
+import {isFilterable} from '@ajuhos/malloy-filter';
+import type * as Malloy from '@ajuhos/malloy-interfaces';
 import {Timer} from '../timing';
 
 class ErrorNode extends ast.SourceQueryElement {

@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import type * as Malloy from '@malloydata/malloy-interfaces';
-import type {Tag} from '@malloydata/malloy-tag';
+import type * as Malloy from '@ajuhos/malloy-interfaces';
+import type {Tag} from '@ajuhos/malloy-tag';
 import type {Item, Spec, View} from 'vega';
 import type {JSX} from 'solid-js';
 import type {

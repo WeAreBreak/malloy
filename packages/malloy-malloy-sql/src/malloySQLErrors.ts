@@ -21,8 +21,8 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import type {LogMessage} from '@malloydata/malloy';
-import {MalloyError} from '@malloydata/malloy';
+import type {LogMessage} from '@ajuhos/malloy';
+import {MalloyError} from '@ajuhos/malloy';
 import type {MalloySQLParseErrorExpected} from './types';
 
 export class MalloySQLParseError extends MalloyError {

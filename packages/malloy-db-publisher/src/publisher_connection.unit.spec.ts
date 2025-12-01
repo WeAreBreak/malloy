@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {describeIfDatabaseAvailable} from '@malloydata/malloy/test';
+import {describeIfDatabaseAvailable} from '@ajuhos/malloy/test';
 import {PublisherConnection} from './publisher_connection';
 import type {ConnectionAttributes} from './client';
 import {Configuration, ConnectionsApi, ConnectionsTestApi} from './client';
@@ -14,7 +14,7 @@ import type {
   SQLSourceDef,
   MalloyQueryData,
   QueryDataRow,
-} from '@malloydata/malloy';
+} from '@ajuhos/malloy';
 
 // mocks client code for testing - only for unit tests
 jest.mock('./client', () => {

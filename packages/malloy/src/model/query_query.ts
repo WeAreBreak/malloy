@@ -72,7 +72,7 @@ import {
   FieldInstanceResultRoot,
   sqlFullChildReference,
 } from './field_instance';
-import type * as Malloy from '@malloydata/malloy-interfaces';
+import type * as Malloy from '@ajuhos/malloy-interfaces';
 import {shouldMaterialize} from './materialization/utils';
 
 function pathToCol(path: string[]): string {

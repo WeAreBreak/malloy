@@ -14,13 +14,13 @@ import type {
   Moment,
   TemporalFilter,
   TemporalLiteral,
-} from '@malloydata/malloy-filter';
+} from '@ajuhos/malloy-filter';
 import {
   isNumberFilter,
   isStringFilter,
   isTemporalFilter,
   isBooleanFilter,
-} from '@malloydata/malloy-filter';
+} from '@ajuhos/malloy-filter';
 import type {Dialect} from '../dialect';
 import {type QueryInfo} from '../dialect';
 import type {

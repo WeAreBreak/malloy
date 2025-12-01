@@ -1,5 +1,5 @@
 {
-  "name": "@malloydata/malloy-interfaces",
+  "name": "@ajuhos/malloy-interfaces",
   "version": "0.0.325",
   "license": "MIT",
   "main": "dist/index.js",

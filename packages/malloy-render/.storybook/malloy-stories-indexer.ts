@@ -2,8 +2,8 @@ import path from 'path';
 import {PluginOption} from 'vite';
 import type {IndexInput, Indexer} from '@storybook/types';
 import fs from 'fs';
-import {DuckDBConnection} from '@malloydata/db-duckdb';
-import {Model, SingleConnectionRuntime, URLReader} from '@malloydata/malloy';
+import {DuckDBConnection} from '@ajuhos/db-duckdb';
+import {Model, SingleConnectionRuntime, URLReader} from '@ajuhos/malloy';
 
 const STORY_MODEL_PREFIX = /##\(story\)\s/;
 const STORY_PREFIX = /#\(story\)\s/;

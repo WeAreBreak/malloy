@@ -11,9 +11,9 @@ import type {
   ModelMaterializer,
   QueryMaterializer,
   LogMessage,
-} from '@malloydata/malloy';
-import {API, MalloyError, Dialect} from '@malloydata/malloy';
-import type {Tag} from '@malloydata/malloy-tag';
+} from '@ajuhos/malloy';
+import {API, MalloyError, Dialect} from '@ajuhos/malloy';
+import type {Tag} from '@ajuhos/malloy-tag';
 
 type JestMatcherResult = {
   pass: boolean;

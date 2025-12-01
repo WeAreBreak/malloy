@@ -6,15 +6,15 @@
  */
 
 /* eslint-disable no-console */
-import {API} from '@malloydata/malloy';
+import {API} from '@ajuhos/malloy';
 import type {
   CompileQueryResponse,
   CompileQueryRequest,
-} from '@malloydata/malloy-interfaces';
+} from '@ajuhos/malloy-interfaces';
 import {
   convertFromThrift,
   convertToThrift,
-} from '@malloydata/malloy-interfaces';
+} from '@ajuhos/malloy-interfaces';
 
 type CompileQueryRequestWithSessionId = CompileQueryRequest & {
   session_id?: string;

@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import * as malloy from '@malloydata/malloy';
-import type {QueryDataRow} from '@malloydata/malloy';
-import {describeIfDatabaseAvailable} from '@malloydata/malloy/test';
+import * as malloy from '@ajuhos/malloy';
+import type {QueryDataRow} from '@ajuhos/malloy';
+import {describeIfDatabaseAvailable} from '@ajuhos/malloy/test';
 import {PublisherConnection} from './publisher_connection';
 import {fileURLToPath} from 'url';
 import * as util from 'util';

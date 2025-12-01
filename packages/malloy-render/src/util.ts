@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import type * as Malloy from '@malloydata/malloy-interfaces';
-import {Tag} from '@malloydata/malloy-tag';
-import {isTimestampUnit, isDateUnit as _isDateUnit} from '@malloydata/malloy';
+import type * as Malloy from '@ajuhos/malloy-interfaces';
+import {Tag} from '@ajuhos/malloy-tag';
+import {isTimestampUnit, isDateUnit as _isDateUnit} from '@ajuhos/malloy';
 import {DurationUnit, isDurationUnit} from './html/data_styles';
 import {timeToString as htmlTimeToString} from './html/utils';
 import {format} from 'ssf';

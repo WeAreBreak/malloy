@@ -40,14 +40,14 @@ import type {
   AtomicFieldDef,
   ArrayDef,
   SQLSourceRequest,
-} from '@malloydata/malloy';
+} from '@ajuhos/malloy';
 import {
   SnowflakeDialect,
   TinyParser,
   mkArrayDef,
   sqlKey,
-} from '@malloydata/malloy';
-import {BaseConnection} from '@malloydata/malloy/connection';
+} from '@ajuhos/malloy';
+import {BaseConnection} from '@ajuhos/malloy/connection';
 
 import {SnowflakeExecutor} from './snowflake_executor';
 import type {ConnectionOptions} from 'snowflake-sdk';

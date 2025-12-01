@@ -25,7 +25,7 @@ import type {
   LogMessage,
   DocumentRange,
   DocumentPosition,
-} from '@malloydata/malloy';
+} from '@ajuhos/malloy';
 import * as parser from './grammar/malloySQL';
 import type {
   MalloySQLStatementConfig,

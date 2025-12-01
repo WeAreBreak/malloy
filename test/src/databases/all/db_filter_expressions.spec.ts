@@ -9,7 +9,7 @@ import {RuntimeList, allDatabases} from '../../runtimes';
 import '../../util/db-jest-matchers';
 import {databasesFromEnvironmentOr} from '../../util';
 import {DateTime as LuxonDateTime} from 'luxon';
-import {Dialect} from '@malloydata/malloy';
+import {Dialect} from '@ajuhos/malloy';
 
 const runtimes = new RuntimeList(databasesFromEnvironmentOr(allDatabases));
 

@@ -22,7 +22,7 @@
  */
 
 import {test} from '@jest/globals';
-import type * as malloy from '@malloydata/malloy';
+import type * as malloy from '@ajuhos/malloy';
 import {testModel} from '../../models/faa_model';
 import type {BigQueryTestConnection} from '../../runtimes';
 import {RuntimeList} from '../../runtimes';
