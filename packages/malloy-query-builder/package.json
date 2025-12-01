@@ -1,6 +1,6 @@
 {
   "name": "@ajuhos/malloy-query-builder",
-  "version": "0.0.325",
+  "version": "0.0.326",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,9 +22,9 @@
     "serve-docs": "npx http-server -o docs"
   },
   "dependencies": {
-    "@ajuhos/malloy-filter": "0.0.325",
-    "@ajuhos/malloy-interfaces": "0.0.325",
-    "@ajuhos/malloy-tag": "0.0.325"
+    "@ajuhos/malloy-filter": "^0.0.326",
+    "@ajuhos/malloy-interfaces": "^0.0.326",
+    "@ajuhos/malloy-tag": "^0.0.326"
   },
   "devDependencies": {
     "http-server": "^14.1.1",

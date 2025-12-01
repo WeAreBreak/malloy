@@ -1,6 +1,6 @@
 {
   "name": "@ajuhos/render",
-  "version": "0.0.325",
+  "version": "0.0.326",
   "license": "MIT",
   "main": "dist/module/index.umd.js",
   "types": "dist/module/index.d.ts",
@@ -29,9 +29,9 @@
     "generate-flow": "ts-node ../../scripts/gen-flow.ts"
   },
   "dependencies": {
-    "@ajuhos/malloy": "0.0.325",
-    "@ajuhos/malloy-interfaces": "0.0.325",
-    "@ajuhos/malloy-tag": "0.0.325",
+    "@ajuhos/malloy": "^0.0.326",
+    "@ajuhos/malloy-interfaces": "^0.0.326",
+    "@ajuhos/malloy-tag": "^0.0.326",
     "@tanstack/solid-virtual": "^3.10.4",
     "lodash": "^4.17.20",
     "luxon": "^3.5.0",
@@ -43,7 +43,7 @@
     "vega-lite": "^5.2.0"
   },
   "devDependencies": {
-    "@ajuhos/db-duckdb": "0.0.325",
+    "@ajuhos/db-duckdb": "^0.0.326",
     "@storybook/addon-essentials": "^8.5.8",
     "@storybook/addon-interactions": "^8.5.8",
     "@storybook/addon-links": "^8.5.8",
