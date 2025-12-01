@@ -21,8 +21,8 @@
     "time": "ts-node src/timer.ts"
   },
   "dependencies": {
-    "@ajuhos/malloy": "^0.0.326",
-    "@ajuhos/malloy-interfaces": "^0.0.326"
+    "@ajuhos/malloy": "^0.0.327",
+    "@ajuhos/malloy-interfaces": "^0.0.327"
   },
-  "version": "0.0.326"
+  "version": "0.0.327"
 }
