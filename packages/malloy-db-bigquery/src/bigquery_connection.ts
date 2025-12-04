@@ -59,6 +59,7 @@ import {
 } from '@ajuhos/malloy';
 import type {TableMetadata} from '@ajuhos/malloy/connection';
 import {BaseConnection} from '@ajuhos/malloy/connection';
+import type {MetadataResponse} from '@google-cloud/common';
 // eslint-disable-next-line no-restricted-imports
 
 export interface BigQueryManagerOptions {
@@ -170,6 +171,7 @@ export class BigQueryConnection
   private config: BigQueryConnectionConfiguration;
 
   private location?: string;
+  public renames: Record<string, string> = {};
 
   constructor(
     option: BigQueryConnectionOptions,
@@ -357,6 +359,7 @@ export class BigQueryConnection
       return tablePath;
     }
   }
+  private metadataCache: Record<string, MetadataResponse> = {};
 
   public async getTableFieldSchema(tablePath: string): Promise<SchemaInfo> {
     const segments = this.normalizeTablePath(tablePath).split('.');
@@ -367,31 +370,44 @@ export class BigQueryConnection
       );
     }
     const [projectId, datasetNamePart, tableNamePart] = segments;
-
+    const needTableSuffixPseudoColumn =
+      tableNamePart !== undefined &&
+      tableNamePart[tableNamePart.length - 1] === '*';
     try {
-      // TODO The `dataset` API has no way to set a different `projectId` than the one stored in the BQ
-      //      instance. So we hack it until a better way exists: we set the `this.bigQuery.projectId`
-      //      to the `projectId` for the dataset, then put it back when we're done. Importantly, we
-      //      set it back _before_ we await the promise, thus avoiding a "concurrency" issue. We've decided
-      //      this is better than creating a new BQ instance every time we need to get a table schema.
-      if (projectId) this.bigQuery.projectId = projectId;
-      const needTableSuffixPseudoColumn =
-        tableNamePart !== undefined &&
-        tableNamePart[tableNamePart.length - 1] === '*';
-      const table = this.bigQuery.dataset(datasetNamePart).table(tableNamePart);
-      const metadataPromise = table.getMetadata();
-      this.bigQuery.projectId = this.billingProjectId;
-      const [metadata] = await metadataPromise;
+      let cachedMetadataResponse = this.metadataCache[tablePath];
+      if (!cachedMetadataResponse) {
+        // TODO The `dataset` API has no way to set a different `projectId` than the one stored in the BQ
+        //      instance. So we hack it until a better way exists: we set the `this.bigQuery.projectId`
+        //      to the `projectId` for the dataset, then put it back when we're done. Importantly, we
+        //      set it back _before_ we await the promise, thus avoiding a "concurrency" issue. We've decided
+        //      this is better than creating a new BQ instance every time we need to get a table schema.
+        if (projectId) this.bigQuery.projectId = projectId;
+        const table = this.bigQuery
+          .dataset(datasetNamePart)
+          .table(tableNamePart);
+        const metadataPromise = table.getMetadata();
+        this.bigQuery.projectId = this.billingProjectId;
+        const resolvedPromise = await metadataPromise;
+        const [metadata] = resolvedPromise;
+        for (const field of metadata.schema.fields) {
+          if (this.renames[field.name]) {
+            field.name = this.renames[field.name];
+          }
+        }
+        this.metadataCache[tablePath] = cachedMetadataResponse =
+          resolvedPromise;
+      }
+      const cachedMetadata = cachedMetadataResponse[0];
       return {
-        schema: metadata.schema,
+        schema: cachedMetadata.schema,
         needsTableSuffixPseudoColumn: needTableSuffixPseudoColumn,
         needsPartitionTimePseudoColumn:
-          metadata.timePartitioning?.type !== undefined &&
-          metadata.timePartitioning?.field === undefined,
+          cachedMetadata.timePartitioning?.type !== undefined &&
+          cachedMetadata.timePartitioning?.field === undefined,
         needsPartitionDatePseudoColumn:
-          metadata.timePartitioning?.type !== undefined &&
-          metadata.timePartitioning?.field === undefined &&
-          metadata.timePartitioning!.type === 'DAY',
+          cachedMetadata.timePartitioning?.type !== undefined &&
+          cachedMetadata.timePartitioning?.field === undefined &&
+          cachedMetadata.timePartitioning!.type === 'DAY',
       };
     } catch (e) {
       throw maybeRewriteError(e);

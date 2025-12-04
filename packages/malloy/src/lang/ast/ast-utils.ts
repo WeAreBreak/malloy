@@ -21,7 +21,9 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+import { ExprIdReference } from "./expressions/expr-id-reference";
 import type {ExprValue} from './types/expr-value';
+import {MalloyElement} from "./types/malloy-element";
 
 /**
  * When a translation hits an error, log and return one of these as a value.
@@ -39,4 +41,45 @@ export function errorFor(reason: string): ExprValue {
     evalSpace: 'constant',
     fieldUsage: [],
   };
+}
+
+export function visitEachChild(
+  node: MalloyElement,
+  kind,
+  callback: (node) => MalloyElement | boolean
+) {
+  let i = 0;
+  let children: unknown = node.children;
+  if (!children) {
+    if (Array.isArray(node)) children = node;
+    else return false;
+  }
+  if (Array.isArray(children)) {
+    for (const child of children) {
+      if (child instanceof kind) {
+        const result = callback(child);
+        if (result) {
+          children[i] = result;
+        }
+      } else {
+        visitEachChild(child, kind, callback);
+      }
+      i++;
+    }
+  } else if (typeof children === 'object') {
+    for (const key in children) {
+      const child = children[key];
+      if (child instanceof kind) {
+        const result = callback(child);
+        if (result) {
+          children[key] = result;
+        }
+      } else {
+        visitEachChild(child, kind, callback);
+      }
+      i++;
+    }
+  } else {
+    return false;
+  }
 }

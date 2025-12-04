@@ -28,6 +28,9 @@ import {
   LegalRefinementStage,
   QueryClass,
 } from '../types/query-property-interface';
+import {ExprIdReference} from "../expressions/expr-id-reference";
+import {visitEachChild} from "../ast-utils";
+import {AggregateFieldDeclaration, FieldDefinitionValue} from "../query-items/field-declaration";
 
 export class Aggregate
   extends DefinitionList<QueryItem>
@@ -36,4 +39,22 @@ export class Aggregate
   elementType = 'aggregateList';
   readonly queryRefinementStage = LegalRefinementStage.Single;
   readonly forceQueryClass = QueryClass.Grouping;
+  constructor(aggregateList: QueryItem[]) {
+    super(aggregateList);
+    const replaceMatrix = new Map();
+    for (const element of this.elements) {
+      visitEachChild(element, ExprIdReference, (child: ExprIdReference) => {
+        const name = child.fieldReference.nameString;
+        if (replaceMatrix.has(name)) {
+          return replaceMatrix.get(name).expr;
+        } else {
+          return false;
+        }
+      });
+      replaceMatrix.set(
+        (element as AggregateFieldDeclaration).defineName,
+        element
+      );
+    }
+  }
 }
