@@ -43,6 +43,14 @@ export function errorFor(reason: string): ExprValue {
   };
 }
 
+export function replaceInNode(node, oldChild, newChild) {
+  for(const key in node) {
+    if(node[key] === oldChild) {
+      node[key] = newChild;
+    }
+  }
+}
+
 export function visitEachChild(
   node: MalloyElement,
   kind,
@@ -50,15 +58,19 @@ export function visitEachChild(
 ) {
   let i = 0;
   let children: unknown = node.children;
+  let hasNode = true;
   if (!children) {
-    if (Array.isArray(node)) children = node;
-    else return false;
+    if (Array.isArray(node)) {
+      children = node;
+      hasNode = false;
+    } else return false;
   }
   if (Array.isArray(children)) {
     for (const child of children) {
       if (child instanceof kind) {
         const result = callback(child);
         if (result) {
+          if (hasNode) replaceInNode(node, child, result);
           children[i] = result;
         }
       } else {
@@ -72,6 +84,7 @@ export function visitEachChild(
       if (child instanceof kind) {
         const result = callback(child);
         if (result) {
+          replaceInNode(node, child, result);
           children[key] = result;
         }
       } else {
